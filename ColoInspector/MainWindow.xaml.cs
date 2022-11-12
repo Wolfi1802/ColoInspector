@@ -79,25 +79,28 @@ namespace ColoInspector
 
                 var newBrush = new System.Windows.Media.SolidColorBrush(color);
 
-                this.UpdateColorView(color);
+                this.UpdateColorView(color, cursor);
 
                 Thread.Sleep(1);
             }
         }
 
-        private void UpdateColorView(System.Windows.Media.Color color)
+        private void UpdateColorView(System.Windows.Media.Color color, Point cursor)
         {
             if (Application.Current != null)
             {
                 if (!Application.Current.Dispatcher.CheckAccess())
                 {
-                    Application.Current.Dispatcher.Invoke(new Action(() => this.UpdateColorView(color)));
+                    Application.Current.Dispatcher.Invoke(new Action(() => this.UpdateColorView(color, cursor)));
                 }
                 else
                 {
                     var solidColor = new System.Windows.Media.SolidColorBrush(color);
                     this.ColorShowName.Text = solidColor.ToString();
                     this.colorShow.Background = solidColor;
+
+                    this.PosX.Text = cursor.X.ToString();
+                    this.PosY.Text = cursor.Y.ToString();
                 }
             }
         }

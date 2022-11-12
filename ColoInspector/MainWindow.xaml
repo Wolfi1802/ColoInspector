@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ColoInspector"
         mc:Ignorable="d"
-        Title="ColorAnalyzer" Width="200" Height="150" Topmost="True" ResizeMode="NoResize">
+        Title="ColorAnalyzer" Width="200" Height="230" Topmost="True" ResizeMode="NoResize">
     <Grid x:Name="grid">
 
         <Grid.ColumnDefinitions>
@@ -14,6 +14,8 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
@@ -26,8 +28,16 @@
         <Label Content="FarbCode" Grid.Row="1" Grid.Column="0"/>
         <TextBox x:Name="ColorShowName" Grid.Row="1" Grid.Column="1" Width="100" Height="23" 
                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5"/>
+        
+        <Label Content="XShow" Grid.Row="2" Grid.Column="0"/>
+        <TextBox x:Name="PosX" Grid.Row="2" Grid.Column="1" Width="100" Height="23" 
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5"/>
+        
+        <Label Content="YShow" Grid.Row="3" Grid.Column="0"/>
+        <TextBox x:Name="PosY" Grid.Row="3" Grid.Column="1" Width="100" Height="23" 
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5"/>
 
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Click="Button_Click" Content="StarteAnalyse" Height="23" Width="100"/>
+        <Button Grid.Row="4" Grid.ColumnSpan="2" Click="Button_Click" Content="StarteAnalyse" Height="23" Width="100"/>
 
     </Grid>
 </Window>
